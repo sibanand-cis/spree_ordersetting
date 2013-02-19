@@ -1,0 +1,39 @@
+<% content_for :head do %>
+  <%#= formtastic_stylesheet_link_tag %>
+<% end %>
+
+<% content_for :page_title do %>
+  <%= @site_page.page_title rescue '' %>
+<% end %>
+
+<div class="order_setting">
+<table>
+<%= semantic_form_for  @order_setting,:url=>admin_order_settings_path, html: { method: :post} do |f| %>
+  <%= f.inputs :name => "" do %>
+    <tr>
+      <td>
+        <%= f.label :default_rate %></br>
+      </td>
+      <td>
+        <%= f.input :default_rate, :label =>false %>      
+      </td>    
+    </tr>
+   
+    <% end %>
+        <%= f.actions do %>
+    <tr>
+      <td>
+        <%= f.action :submit, :as => :button %>
+      </td>
+      <td>
+       <%= f.action :cancel, :as => :link %>
+      </td>
+    </tr>
+
+      <% end %>
+      
+<% end %>
+</table>
+
+</div>
+
