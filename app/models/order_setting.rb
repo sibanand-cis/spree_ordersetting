@@ -1,5 +1,5 @@
 class OrderSetting < ActiveRecord::Base
-  attr_accessible :default_rate,:minimum_booking_period
+  attr_accessible :default_rate,:minimum_booking_period,:maximum_space
   validates :default_rate, :presence => true
 
   def self.setting
