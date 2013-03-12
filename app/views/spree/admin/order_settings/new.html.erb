@@ -9,15 +9,6 @@
 <div class="order_setting">
 <table>
 <%= semantic_form_for  @order_setting,:url=>admin_order_settings_path, html: { method: :post} do |f| %>
-  <%= f.inputs :name => "" do %>
-    <tr>
-      <td>
-        <%= f.label :default_rate %></br>
-      </td>
-      <td>
-        <%= f.input :default_rate, :label =>false %>      
-      </td>    
-    </tr>
 
     <tr>
       <td>
@@ -46,8 +37,7 @@
       </td>    
     </tr>
 
-    <% end %>
-        <%= f.actions do %>
+
     <tr>
       <td>
         <%= f.action :submit, :as => :button %>
@@ -57,7 +47,7 @@
       </td>
     </tr>
 
-      <% end %>
+    
       
 <% end %>
 </table>
