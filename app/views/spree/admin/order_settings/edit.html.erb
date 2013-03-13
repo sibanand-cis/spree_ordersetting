@@ -1,0 +1,57 @@
+<% content_for :head do %>
+  <%#= formtastic_stylesheet_link_tag %>
+<% end %>
+
+<% content_for :page_title do %>
+  <%= @site_page.page_title rescue '' %>
+<% end %>
+
+<div class="order_setting">
+<table>
+<%= semantic_form_for  @order_setting,:url=>admin_order_settings_path, html: { method: :post} do |f| %>
+
+    <tr>
+      <td>
+        <%= f.label "Minimum Booking Period(In Days)"  %></br>
+      </td>
+      <td>
+        <%= f.input :minimum_booking_period, :label =>false %>      
+      </td>    
+    </tr>
+    
+    <tr>
+      <td>
+        <%= f.label "maximum amount of spaces"  %></br>
+      </td>
+      <td>
+        <%= f.input :maximum_space, :label =>false %>      
+      </td>    
+    </tr>   
+    
+    <tr>
+      <td>
+        <%= f.label "parking permit"  %></br>
+      </td>
+      <td>
+        <%= f.input :parking_permit, :label =>false %>      
+      </td>    
+    </tr>
+
+
+    <tr>
+      <td>
+        <%= f.action :submit, :as => :button %>
+      </td>
+      <td>
+       <%= link_to "configuration", edit_admin_general_settings_path %>
+      </td>
+    </tr>
+  
+      
+<% end %>
+</table>
+
+</div>
+
+
+
